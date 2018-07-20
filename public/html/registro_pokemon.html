@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+    crossorigin="anonymous">-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/reset.css">
+  </head>
+  <body>
+    <div id="gradient" />
+    <main>
+      <form class="formulario_pokemon">
+          <h1>REGISTRO DE POKEMONES</h1>
+        <div class = label-content>
+            <div class = input-content>
+          <label for="txtpokedex">Numero de la Pokedex</label>
+          <input type="text" id="txtpokedex">
+        </div>
+
+        <div class = label-content>
+            <div class = input-content>
+          <label for="txtpokemon">Nombre del Pokemon</label>
+          <input type="text" id="txtpokemon">
+        </div>
+
+        <div class = label-content>
+            <div class = input-content>
+          <label for="txttipo">Tipo de Pokemon</label>
+          <input type="text" id="txttipo">
+        </div>
+
+        <div class = label-content>
+            <div class = input-content>
+          <label for="textfoto">Foto</label>
+          <input type="text" id="textfoto">
+        </div>
+
+        <div>
+          <button type="button" id="btnregistro_pokemon" class="btn-registro">Registrar Pokemon</button>
+        </div>
+      </form>
+    </main>
+  </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/sweetalert2.js"></script>
+    <script src="../js/controlador_registro_pokemon.js"></script>
+    <script src="../js/servicio_registro_pokemon.js"></script>
+
+</html>

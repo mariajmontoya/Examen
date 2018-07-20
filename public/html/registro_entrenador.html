@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+    crossorigin="anonymous">-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/reset.css">
+  </head>
+  <body>
+    <div id="gradient" />
+    <main>
+     
+      <form class="formulario_entrenador">
+          <h1>REGISTRO DE ENTRENADORES</h1>
+        <div class = label-content>
+        <div class = input-content>
+          <label for="txtnumero_entrenador">Numero de entrenador</label>
+          <input type="text" id="txtnumero_entrenador">
+        </div>
+
+        <div class = label-content>
+        <div class = input-content>
+          <label for="txtnombre_entrenador">Nombre del entrenador</label>
+          <input type="text" id="txtnombre_entrenador">
+        </div>
+
+        <div class = label-content>
+            <div class = input-content>
+          <label for="txtedad">Edad</label>
+          <input type="text" id="txtedad">
+        </div>
+
+        <div class = label-content>
+            <div class = input-content>
+            <label for="textsexo">Sexo</label>
+            <input type="text" id="textsexo">
+        </div>
+
+        <div class = label-content>
+            <div class = input-content>
+          <label for="textfoto_entrenador">Foto entrenador</label>
+          <input type="text" id="textfoto_entrenador">
+        </div>
+
+        <div>
+          <button type="button" id="btnregistro_entrenador" class="btn-registro">Registrar Entrenador</button>
+        </div>
+      </form>
+    </main>
+  </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/sweetalert2.js"></script>
+    <script src="../js/controlador_registro_entrenador.js"></script>
+    <script src="../js/servicio_registro_entrenador.js"></script>
+
+</html>
