@@ -28,7 +28,7 @@ function listaPokemones (criterioBusqueda){
         criterioBusqueda = '';
     }
 
-    for (let i = 1; i < listaPokemones.length; i++) {
+    for (let i = 0; i < listaPokemones.length; i++) {
 
         if (listaPokemones[i]["pokemon"].toLowerCase().includes(criterioBusqueda.toLowerCase())) {
             let fila = tbody.insertRow();
@@ -40,7 +40,11 @@ function listaPokemones (criterioBusqueda){
             celdapokedex.innerHTML = listaPokemones[i]['pokedex'];
             celdapokemon.innerHTML = listaPokemones[i]['pokemon'];
             celdatipo.innerHTML = listaPokemones[i]['tipo'];
-            celdafoto.innerHTML = listaPokemones[i]['foto'];
+            
+            let imagen = document.createElement("img"); 
+               imagen.src = "https://res-console.cloudinary.com/dspuap7va/thumbnails/v1/image/upload/v1532229609/ZGNxdWIwY3N4aHY5NW15bG9sY2k=/grid"; 
+               celdafoto.appendChild(imagen); 
+
         }
     }
 

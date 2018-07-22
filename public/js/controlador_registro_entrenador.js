@@ -10,7 +10,29 @@ let inputnumero_entrenador = document.querySelector('#txtnumero_entrenador');
 let inputnombre_entrenador = document.querySelector('#txtnombre_entrenador');
 let inputedad = document.querySelector('#txtedad');
 let inputsexo = document.querySelector('#textsexo');
-let inputfoto_entrenador = document.querySelector('#textfoto_entrenador');
+
+
+//drop down para seleccion de proyectos
+/*creaDataList();
+
+
+function creaDataList () {
+    let listaProyectos = obtenerListaProyectos();
+    
+    for (let i = 0; i < listaProyectos.length; i++) {
+
+
+        let option = document.createElement("option");
+        option.text = listaProyectos[i]['nombre'];
+        option.value = listaProyectos[i]['nombre'];
+        let select = document.querySelector("#sltProyectos");
+        select.add(option);
+   
+    }  
+
+    console.log(listaProyectos);
+    
+}*/
 
 
 
@@ -23,10 +45,10 @@ function obtenerDatos(){
     let snombre_entrenador = inputnombre_entrenador.value;
     let sedad = inputedad.value;
     let ssexo = inputsexo.value;
-    let sfoto_entrenador = inputfoto_entrenador.value;
+    let simagen = imagenUrl;
     
 
-    infoentrenador.push(snumero_entrenador, snombre_entrenador, sedad, ssexo, sfoto_entrenador);
+    infoentrenador.push(snumero_entrenador, snombre_entrenador, sedad, ssexo, simagen);
     
     bError = validar();
     if(bError == true){
@@ -52,42 +74,12 @@ function obtenerDatos(){
     
 }
 
-function imprimirListaEntrenadores () {
-    let listaEntrenadores = obtenerlistaEntrenadores();
-    let tbody = document.querySelector('#tblentrenadores tbody');
-    tbody.innerHTML = '';
-
-    for(let i = 0; i < listaEntrenadores.length; i++){
-        let fila = tbody.insertRow();
-
-        if(listaEntrenadores[i]['desactivado']){
-            continue;
-        } else { 
-
-        let snumero_entrenador = fila.insertCell();
-        let snombre_entrenador = fila.insertCell();
-        let sedad = fila.insertCell();
-        let ssexo = fila.insertCell();
-        let sfoto_entrenador = fila.insertCell();
-        
-
-        snumero_entrenador.innerHTML = listaEntrenadores[i]['numero_entrenador'];
-        snombre_entrenador.innerHTML = listaEntrenadores[i]['nombre_entrenador'];
-        sedad.innerHTML = listaEntrenadores[i]['edad'];
-        ssexo.innerHTML = listaEntrenadores[i]['sexo'];
-        sfoto_entrenador.innerHTML = listaEntrenadores[i]['foto_entrenador'];
-       
-
-    }
-}
-
-};
 
 function validar(){
     let bError = false;
 
     let regexSoloLetras = /^[a-z A-ZáéíóúÁÉÍÓÚñÑ]+$/;
-    let regexSoloNumeros = /^[15-80]+$/;
+    let regexSoloNumeros = /^[15-80]{1,3}$/;
 
     //Validación numero entrenador
     if(inputnumero_entrenador.value == '' || (regexSoloNumeros.test(inputnumero_entrenador.value)==false) ){
@@ -118,14 +110,6 @@ function validar(){
         inputsexo.classList.remove('error-input');
     }
 
-    //Validación foto
-    if(inputfoto_entrenador.value == ''){
-        inputfoto_entrenador.classList.add('error-input');
-        bError = true;
-    }else{
-        inputfoto_entrenador.classList.remove('error-input');
-    }
-    
     return bError;
 }
 
@@ -134,7 +118,6 @@ function limpiarFormulario(){
     inputnombre_entrenador.value = '';
     inputedad.value = '';
     inputsexo.value = '';
-    inputfoto_entrenador.value = '';
 }
 
 //filtrar entrenador

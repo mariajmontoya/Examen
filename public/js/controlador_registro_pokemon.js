@@ -9,7 +9,29 @@ botonregistro.addEventListener('click' , obtenerDatos);
 let inputpokedex = document.querySelector('#txtpokedex');
 let inputpokemon = document.querySelector('#txtpokemon');
 let inputtipo = document.querySelector('#txttipo');
-let inputfoto = document.querySelector('#textfoto');
+
+
+//drop down para seleccion de proyectos
+/*creaDataList();
+
+
+function creaDataList () {
+    let listaProyectos = obtenerListaProyectos();
+    
+    for (let i = 0; i < listaProyectos.length; i++) {
+
+
+        let option = document.createElement("option");
+        option.text = listaProyectos[i]['nombre'];
+        option.value = listaProyectos[i]['nombre'];
+        let select = document.querySelector("#sltProyectos");
+        select.add(option);
+   
+    }  
+
+    console.log(listaProyectos);
+    
+}*/
 
 
 function obtenerDatos(){
@@ -20,10 +42,11 @@ function obtenerDatos(){
     let spokedex = Number(inputpokedex.value);
     let spokemon = inputpokemon.value;
     let stipo = inputtipo.value;
-    let sfoto = inputfoto.value;
+    let simagen = imagenUrl;
+   
     
 
-    infopokemon.push(spokedex, spokemon, stipo, sfoto);
+    infopokemon.push(spokedex, spokemon, stipo, simagen);
     
     bError = validar();
     if(bError == true){
@@ -76,13 +99,7 @@ function validar(){
     }else{
         inputtipo.classList.remove('error-input');
     }
-     //Validación foto
-     if(inputfoto.value == ''){
-        inputfoto.classList.add('error-input');
-        bError = true;
-    }else{
-        inputfoto.classList.remove('error-input');
-    }
+     
     
     return bError;
 }
@@ -91,7 +108,6 @@ function limpiarFormulario(){
     inputpokedex.value = '';    
     inputpokemon.value = '';
     inputtipo.value = '';
-    inputfoto.value = '';
 }
 
 //filtrar
@@ -142,13 +158,13 @@ function imprimirListaPokemones () {
         let spokedex = fila.insertCell();
         let spokemon = fila.insertCell();
         let stipo = fila.insertCell();
-        let sfoto = fila.insertCell();
+      
         
 
         spokedex.innerHTML = listaPokemones[i]['pokedex'];
         spokemon.innerHTML = listaPokemones[i]['pokemon'];
         stipo.innerHTML = listaPokemones[i]['tipo'];
-        sfoto.innerHTML = listaPokemones[i]['foto'];
+   
        
 
     }

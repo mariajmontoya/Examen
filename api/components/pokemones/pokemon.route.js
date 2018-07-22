@@ -19,4 +19,9 @@ router.route('/buscarPokemon')
     pokemon.buscarPokemon(req, res);
 });
 
+router.route('/agregarfoto')
+.post(function(req, res){
+    pokemon.agregarfoto(req, res);
+});
+
 module.exports = router;
