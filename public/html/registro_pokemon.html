@@ -9,11 +9,15 @@
     <link rel="stylesheet" href="../css/reset.css">
   </head>
   <body>
-    <div id="gradient" />
-    <main>
-      <form class="formulario_pokemon">
+    <header>
+      <div id ="gradient">
           <h1>REGISTRO DE POKEMONES</h1>
-          
+      </div>
+      
+    </header>
+    <div>
+    <form class="formulario_pokemon">
+        <div class = "container">
         <div class = "label-content">
             <div class = "input-content">
           <label for="txtpokedex">Numero de la Pokedex</label>
@@ -33,24 +37,82 @@
         <input type="text" id="txttipo">
       </div>
 
-      <!--<div class="field" > 
-        <label for="sltProyectos">Proyecto asociado</label>
-        <select name="" id="sltProyectos">
-            <option value="#">Seleccione un proyecto</option>
+      <div class = "label-content">
+          <div class = "input-content"> 
+        <label for="txttipo">Tipo de Pokemon</label>
+        <select name="" id="txttipo">
+            <option value="#">  </option>
         </select>
-    </div>-->
-
-
+    </div>
 
         <button type="button" id="btnSeleccionarImagen">Foto del pokemon</button>
        
-
         <div>
           <button type="button" id="btnregistro_pokemon" class="btn-registro">Registrar Pokemon</button>
         </div>
       </form>
-    </main>
+      </div>
+
+    
+      <div><h1>LISTA DE POKEMONES</h1></div>
+      <form action="">
+          <div class = "label-buscar">
+          <div class = "input-buscar">
+          <input type="text" name="inputBuscar" id="inputBuscar">
+          <label for="inputBuscar"><i class="fas fa-search"></i>Buscar Pokemon</label>
+      </form>
+   
+
+      <table id="tblpokemones">
+          <thead>
+              <th>Numero de Pokedex</th>
+              <th>Nombre del Pokemon</th>
+              <th>Tipo de Pokemon</th>
+              <th>Foto</th>
+          </thead>
+          <tbody>
+
+
+          </tbody>
+      </table>
+    </div>
+  </main>
+
+
   </body>
+
+  <footer>
+    <div><h1>TIPOS DE POKEMON</h1></div>
+
+  <div class="container_tipo">
+    <div class ="fila1">
+      <div>Bicho</div>
+      <div>Negro</div>
+      <div>Dragon</div>
+      <div>Electrico</div>
+      <div>Hada</div>
+      <div>Pelea</div>
+    </div>
+    <div class ="fila2">
+      <div>Fuego</div>
+      <div>Volador</div>
+      <div>Fantasma</div>
+      <div>Verde</div>
+      <div>Tierra</div>
+      <div>Hielo</div>
+    </div>
+    <div class ="fila3">
+      <div>Normal</div>
+      <div>Veneno</div>
+      <div>Psiquico</div>
+      <div>Roca</div>
+      <div>Acero</div>
+      <div>Agua</div>
+    </div>
+  </div>
+
+    
+  </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../js/sweetalert2.js"></script>
@@ -59,6 +121,8 @@
     <script src="../js/controlador_registro_pokemon.js"></script>
     <script src="../js/servicio_registro_pokemon.js"></script>
     <script src="../js/servicio_imagen.js"></script>
+    <script src="../js/servicio_lista_pokemon.js"></script>
+    <script src="../js/controlador_lista_pokemon.js"></script>
   
    
 

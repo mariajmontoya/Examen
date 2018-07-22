@@ -64,7 +64,8 @@ app.use( function(req, res, next) {
  */
 
 const pokemon = require('../api/components/pokemones/pokemon.route');
-const entrenador = require('../api/components/entrenadores/entrenador.route')
+const entrenador = require('../api/components/entrenadores/entrenador.route');
+
 
 /**
  * Le indicamos que le de acceso externo a las rutas inicializadas
@@ -72,6 +73,7 @@ const entrenador = require('../api/components/entrenadores/entrenador.route')
 
 app.use('/api', pokemon);
 app.use('/api', entrenador);
+
 
 // Se guarda todo lo que se ha realizado
 module.exports = app;
