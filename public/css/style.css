@@ -1,8 +1,9 @@
 html {
-    /*background:url('http://cdn.wallpapersafari.com/13/6/Mpsg2b.jpg');*/
-    background: -webkit-linear-gradient(left, #25c481, #25b7c4);
-    background: linear-gradient(to right, #25c481, #25b7c4);
+  font-size: 100%;
+  font-family: 'Open Sans', sans-serif;
+  background: #ffffff;
   }
+
 
   #gradient {
   width: 100%;
@@ -13,11 +14,11 @@ html {
 
 
 .error-input{
-  background-image:url(../../img/invalid3.png); 
   background-repeat: no-repeat; 
   background-position: right;
   border-bottom: 2px solid #c0392b;
 }
+
 
 h1{
   font-size: 26px;

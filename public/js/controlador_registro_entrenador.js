@@ -87,7 +87,7 @@ function validar(){
     let bError = false;
 
     let regexSoloLetras = /^[a-z A-ZáéíóúÁÉÍÓÚñÑ]+$/;
-    let regexSoloNumeros = /^[0-9]+$/;
+    let regexSoloNumeros = /^[15-80]+$/;
 
     //Validación numero entrenador
     if(inputnumero_entrenador.value == '' || (regexSoloNumeros.test(inputnumero_entrenador.value)==false) ){

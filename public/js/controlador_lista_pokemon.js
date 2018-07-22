@@ -1,119 +1,49 @@
-'use srticit';
+'use strict';
 
 // variables globales----------------------------------------
 const criterioBuscar = document.querySelector('#criterioBuscar');
 const tblpokemones = document.querySelector('#tblpokemones');
 
+let inputFiltro = document.querySelector('#inputBuscar');
+inputFiltro.addEventListener('change', function () {
+    listaPokemones(inputFiltro.value);
+})
+
 //listeners--------------------------------------------------
 //criterioBuscar.addEventListener('keyup' , function(){FiltrarlistaPokemones()});
 
 //loads------------------------------------------------------
-//window.onload = function(){
-    //listaPokemones();
+//window.onload () = function(){
+    listaPokemones();
 //};
 
-function listaPokemones(){
+function listaPokemones (criterioBusqueda){
+
     let listaPokemones = obtenerlistaPokemones();
+    let filaspokemones = tblpokemones.getElementsByTagName('tbody');
     let tbody = document.querySelector('#tblpokemones tbody');
     tbody.innerHTML = '';
+    
+    if (!criterioBusqueda) {
+        criterioBusqueda = '';
+    }
 
-    for(let i = 0; i < listaPokemones.length; i++){
-        
-        if(listaPokemones[i]['desactivado']){
-            continue;
-        } else { 
-        
+    for (let i = 1; i < listaPokemones.length; i++) {
+
+        if (listaPokemones[i]["pokemon"].toLowerCase().includes(criterioBusqueda.toLowerCase())) {
             let fila = tbody.insertRow();
             let celdapokedex = fila.insertCell();
             let celdapokemon = fila.insertCell();
             let celdatipo = fila.insertCell();
             let celdafoto = fila.insertCell();
-            let btns = fila.insertCell();
-    
 
-            /*let btnVer = document.createElement('input');
-            btnVer.type = 'button';
-            btnVer.value = 'Ver';
-            btnVer.name = ListaCliente[i]['_id'];
-            btnVer.classList.add('btn-list');
-            // btnVer.addEventListener('click', ftnMostrarCliente);
-
-            let btnEliminar = document.createElement('input');
-            btnEliminar.type = 'button';
-            btnEliminar.value = 'Eliminar';
-            btnEliminar.name = ListaCliente[i]['_id'];
-            btnEliminar.classList.add('btn-list');
-            // btnEliminar.addEventListener('click', ftnEliminarProyecto);*/
-
-            celdapokedex.innerHTML = ListaCliente[i]['pokedex'];
-            celdapokemon.innerHTML = ListaCliente[i]['pokemon'];
-            celdatipo.innerHTML = ListaCliente[i]['tipo'];
-            celdafoto.innerHTML = ListaCliente[i]['foto'];
-        
-            btns.appendChild(btnVer);
-            /*btns.appendChild(btnEliminar);*/
-        }
-    }
-}
-
-function imprimirlistaPokemones () {
-        let listaPokemones = obtenerlistaPokemones();
-        let tbody = document.querySelector('#tblpokemones tbody');
-        tbody.innerHTML = '';
-    
-        for(let i = 0; i < listaPokemones.length; i++){
-            let fila = tbody.insertRow();
-    
-            if(listaPokemones[i]['desactivado']){
-                continue;
-            } else { 
-    
-            let spokedex = fila.insertCell();
-            let spokemon = fila.insertCell();
-            let stipo = fila.insertCell();
-            let sfoto = fila.insertCell();
-            let btns = fila.insertCell();
-            
-    
-            spokedex.innerHTML = listaPokemones[i]['pokedex'];
-            spokemon.innerHTML = listaPokemones[i]['pokemon'];
-            stipo.innerHTML = listaPokemones[i]['tipo'];
-            sfoto.innerHTML = listaPokemones[i]['foto'];
-        
+            celdapokedex.innerHTML = listaPokemones[i]['pokedex'];
+            celdapokemon.innerHTML = listaPokemones[i]['pokemon'];
+            celdatipo.innerHTML = listaPokemones[i]['tipo'];
+            celdafoto.innerHTML = listaPokemones[i]['foto'];
         }
     }
 
-    
-
-};
-
-function FiltrarlistaPokemones (){
-
-    let criterioBuscar = inputBuscar.value.toUpperCase();
-    let filaspokemones = tblpokemones.getElementsByTagName('tbody');
-    let datosFila = null;
-    let datos = null;
-    let valor = null;
-    let coincide = false;
-
-    for (let i = 1; i < filaspokemones.length; i++) {    
-        datosFila = filaspokemones[i];
-        datos = datosFila.getElementsByTagName('tbody');
-        coincide = false;
-
-        for (let j = 0; j < datos.length; j++) {
-            valor = datos[j].innerHTML.toUpperCase();
-
-            if(valor.includes(criterioBuscar)){
-                coincide = true;
-            } 
-        }
-        if(coincide){
-            datosFila.classList.remove('esconder');
-        } else {
-            datosFila.classList.add('esconder');
-        }
-    }
 
    
 };

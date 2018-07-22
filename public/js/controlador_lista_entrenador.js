@@ -2,119 +2,52 @@
 
 // variables globales----------------------------------------
 const criterioBuscar = document.querySelector('#criterioBuscar');
-const tblpokemones = document.querySelector('#tblpokemones');
+const tblentrenadores = document.querySelector('#tblentrenadores');
+
+let inputFiltro = document.querySelector('#inputBuscar');
+inputFiltro.addEventListener('change', function () {
+    listaEntrenador(inputFiltro.value);
+})
 
 //listeners--------------------------------------------------
 //criterioBuscar.addEventListener('keyup' , function(){FiltrarlistaPokemones()});
 
 //loads------------------------------------------------------
 //window.onload = function(){
-    //listaPokemones();
+    listaEntrenador();
 //};
 
-function listaPokemones(){
-    let listaPokemones = obtenerlistaPokemones();
-    let tbody = document.querySelector('#tblpokemones tbody');
+function listaEntrenador(criterioBusqueda){
+
+    let listaEntrenador = obtenerlistaEntrenador();
+    let filasentrenador = tblentrenadores.getElementsByTagName('tbody');
+    let tbody = document.querySelector('#tblentrenadores tbody');
     tbody.innerHTML = '';
 
-    for(let i = 0; i < listaPokemones.length; i++){
-        
-        if(listaPokemones[i]['desactivado']){
-            continue;
-        } else { 
-        
+    if (!criterioBusqueda) {
+        criterioBusqueda = '';
+    }
+
+    for(let i = 0; i < listaEntrenador.length; i++){
+
+        if (listaEntrenador[i]["nombre_entrenador"].toLowerCase().includes(criterioBusqueda.toLowerCase())) {
             let fila = tbody.insertRow();
-            let celdapokedex = fila.insertCell();
-            let celdapokemon = fila.insertCell();
-            let celdatipo = fila.insertCell();
-            let celdafoto = fila.insertCell();
-            let btns = fila.insertCell();
-    
+            let celdanumero_entrenador = fila.insertCell();
+            let celdanombre_entrenador = fila.insertCell();
+            let celdaedad = fila.insertCell();
+            let celdasexo = fila.insertCell();
+            let celdafoto_entrenador = fila.insertCell();
+          
 
-            /*let btnVer = document.createElement('input');
-            btnVer.type = 'button';
-            btnVer.value = 'Ver';
-            btnVer.name = ListaCliente[i]['_id'];
-            btnVer.classList.add('btn-list');
-            // btnVer.addEventListener('click', ftnMostrarCliente);
-
-            let btnEliminar = document.createElement('input');
-            btnEliminar.type = 'button';
-            btnEliminar.value = 'Eliminar';
-            btnEliminar.name = ListaCliente[i]['_id'];
-            btnEliminar.classList.add('btn-list');
-            // btnEliminar.addEventListener('click', ftnEliminarProyecto);*/
-
-            celdapokedex.innerHTML = ListaCliente[i]['pokedex'];
-            celdapokemon.innerHTML = ListaCliente[i]['pokemon'];
-            celdatipo.innerHTML = ListaCliente[i]['tipo'];
-            celdafoto.innerHTML = ListaCliente[i]['foto'];
-        
-            btns.appendChild(btnVer);
-            /*btns.appendChild(btnEliminar);*/
-        }
-    }
-}
-function imprimirlistaPokemones () {
-        let listaPokemones = obtenerlistaPokemones();
-        let tbody = document.querySelector('#tblpokemones tbody');
-        tbody.innerHTML = '';
-    
-        for(let i = 0; i < listaPokemones.length; i++){
-            let fila = tbody.insertRow();
-    
-            if(listaPokemones[i]['desactivado']){
-                continue;
-            } else { 
-    
-            let spokedex = fila.insertCell();
-            let spokemon = fila.insertCell();
-            let stipo = fila.insertCell();
-            let sfoto = fila.insertCell();
-            let btns = fila.insertCell();
-            
-    
-            spokedex.innerHTML = listaPokemones[i]['pokedex'];
-            spokemon.innerHTML = listaPokemones[i]['pokemon'];
-            stipo.innerHTML = listaPokemones[i]['tipo'];
-            sfoto.innerHTML = listaPokemones[i]['foto'];
+            celdanumero_entrenador.innerHTML = listaEntrenador[i]['numero_entrenador'];
+            celdanombre_entrenador.innerHTML = listaEntrenador[i]['nombre_entrenador'];
+            celdaedad.innerHTML = listaEntrenador[i]['edad'];
+            celdasexo.innerHTML = listaEntrenador[i]['sexo'];
+            celdafoto_entrenador.innerHTML = listaEntrenador[1]['foto_entrenador'];
         
         }
     }
 
-    
-
-};
-
-function FiltrarlistaPokemones (){
-
-    let criterioBuscar = inputBuscar.value.toUpperCase();
-    let filaspokemones = tblpokemones.getElementsByTagName('tbody');
-    let datosFila = null;
-    let datos = null;
-    let valor = null;
-    let coincide = false;
-
-    for (let i = 1; i < filaspokemones.length; i++) {    
-        datosFila = filaspokemones[i];
-        datos = datosFila.getElementsByTagName('tbody');
-        coincide = false;
-
-        for (let j = 0; j < datos.length; j++) {
-            valor = datos[j].innerHTML.toUpperCase();
-
-            if(valor.includes(criterioBuscar)){
-                coincide = true;
-            } 
-        }
-        if(coincide){
-            datosFila.classList.remove('esconder');
-        } else {
-            datosFila.classList.add('esconder');
-        }
-    }
-
-   
 };
 
 
