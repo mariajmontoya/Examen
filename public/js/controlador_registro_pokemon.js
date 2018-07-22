@@ -11,28 +11,6 @@ let inputpokemon = document.querySelector('#txtpokemon');
 let inputtipo = document.querySelector('#txttipo');
 
 
-//drop down para seleccion de proyectos
-/*creaDataList();
-
-
-function creaDataList () {
-    let listaProyectos = obtenerListaProyectos();
-    
-    for (let i = 0; i < listaProyectos.length; i++) {
-
-
-        let option = document.createElement("option");
-        option.text = listaProyectos[i]['nombre'];
-        option.value = listaProyectos[i]['nombre'];
-        let select = document.querySelector("#sltProyectos");
-        select.add(option);
-   
-    }  
-
-    console.log(listaProyectos);
-    
-}*/
-
 
 function obtenerDatos(){
     let infopokemon =[];

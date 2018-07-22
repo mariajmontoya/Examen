@@ -17,52 +17,56 @@
     </header>
     <div>
     <form class="formulario_pokemon">
-        <div class = "container">
-        <div class = "label-content">
-            <div class = "input-content">
+        <div>
           <label for="txtpokedex">Numero de la Pokedex</label>
           <input type="text" id="txtpokedex">
         </div>
 
-        <div class = "label-content">
-            <div class = "input-content">
+        <div>
           <label for="txtpokemon">Nombre del Pokemon</label>
           <input type="text" id="txtpokemon">
         </div>
 
-  
-        <div class = "label-content">
-          <div class = "input-content">
-        <label for="txttipo">Tipo</label>
-        <input type="text" id="txttipo">
-      </div>
+        <div>
+            <label for=" ">Tipo Pokemon</label>
+            <select name="Tipo" id="txttipo" required>
+                <option value=" ">Seleccione el Tipo</option>
+                <option value="Bicho">Bicho</option>
+                <option value="Negro">Negro</option>
+                <option value="Dragon">Dragon</option>
+                <option value="Electrico">Electrico</option>
+                <option value="Hada">Hada</option>
+                <option value="Pelea">Pelea</option>
+                <option value="Fuego">Fuego</option>
+                <option value="Volador">Volador</option>
+                <option value="Fantasma">Fantasma</option>
+                <option value="Verde">Verde</option>
+                <option value="Tierra">tierra</option>
+                <option value="Hielo">Hielo</option>
+                <option value="Normal">Normal</option>
+                <option value="Veneno">Veneno</option>
+                <option value="Psiquico">Psiquico</option>
+                <option value="Roca">Roca</option>
+                <option value="Acero">Acero</option>
+                <option value="Agua">Agua</option>
+            </select>
+        </div>  
 
-      <div class = "label-content">
-          <div class = "input-content"> 
-        <label for="txttipo">Tipo de Pokemon</label>
-        <select name="" id="txttipo">
-            <option value="#">  </option>
-        </select>
+        <div><button type="button" id="btnSeleccionarImagen">Foto del pokemon</button></div>
+  
+        <div><button type="button" id="btnregistro_pokemon" class="btn-registro">Registrar Pokemon</button></div>
+    </form>
     </div>
 
-        <button type="button" id="btnSeleccionarImagen">Foto del pokemon</button>
-       
-        <div>
-          <button type="button" id="btnregistro_pokemon" class="btn-registro">Registrar Pokemon</button>
-        </div>
-      </form>
-      </div>
-
-    
-      <div><h1>LISTA DE POKEMONES</h1></div>
+    <div><h1>LISTA DE POKEMONES</h1></div>
+      <div>
       <form action="">
-          <div class = "label-buscar">
-          <div class = "input-buscar">
-          <input type="text" name="inputBuscar" id="inputBuscar">
-          <label for="inputBuscar"><i class="fas fa-search"></i>Buscar Pokemon</label>
+          <input type="text" name="input-Buscar" id="input-Buscar">
+          <label for="input-Buscar"><i class="fas fa-search"></i>Buscar Pokemon</label>
       </form>
-   
+    </div>
 
+      <div>
       <table id="tblpokemones">
           <thead>
               <th>Numero de Pokedex</th>
@@ -76,43 +80,10 @@
           </tbody>
       </table>
     </div>
-  </main>
 
 
   </body>
 
-  <footer>
-    <div><h1>TIPOS DE POKEMON</h1></div>
-
-  <div class="container_tipo">
-    <div class ="fila1">
-      <div>Bicho</div>
-      <div>Negro</div>
-      <div>Dragon</div>
-      <div>Electrico</div>
-      <div>Hada</div>
-      <div>Pelea</div>
-    </div>
-    <div class ="fila2">
-      <div>Fuego</div>
-      <div>Volador</div>
-      <div>Fantasma</div>
-      <div>Verde</div>
-      <div>Tierra</div>
-      <div>Hielo</div>
-    </div>
-    <div class ="fila3">
-      <div>Normal</div>
-      <div>Veneno</div>
-      <div>Psiquico</div>
-      <div>Roca</div>
-      <div>Acero</div>
-      <div>Agua</div>
-    </div>
-  </div>
-
-    
-  </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../js/sweetalert2.js"></script>

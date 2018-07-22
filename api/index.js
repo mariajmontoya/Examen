@@ -67,6 +67,8 @@ const pokemon = require('../api/components/pokemones/pokemon.route');
 const entrenador = require('../api/components/entrenadores/entrenador.route');
 
 
+
+
 /**
  * Le indicamos que le de acceso externo a las rutas inicializadas
  */

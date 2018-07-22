@@ -12,30 +12,6 @@ let inputedad = document.querySelector('#txtedad');
 let inputsexo = document.querySelector('#textsexo');
 
 
-//drop down para seleccion de proyectos
-/*creaDataList();
-
-
-function creaDataList () {
-    let listaProyectos = obtenerListaProyectos();
-    
-    for (let i = 0; i < listaProyectos.length; i++) {
-
-
-        let option = document.createElement("option");
-        option.text = listaProyectos[i]['nombre'];
-        option.value = listaProyectos[i]['nombre'];
-        let select = document.querySelector("#sltProyectos");
-        select.add(option);
-   
-    }  
-
-    console.log(listaProyectos);
-    
-}*/
-
-
-
 function obtenerDatos(){
     let infoentrenador =[];
     let bError = false;
@@ -79,7 +55,7 @@ function validar(){
     let bError = false;
 
     let regexSoloLetras = /^[a-z A-ZáéíóúÁÉÍÓÚñÑ]+$/;
-    let regexSoloNumeros = /^[15-80]{1,3}$/;
+    let regexSoloNumeros = /^[0-9]+$/;
 
     //Validación numero entrenador
     if(inputnumero_entrenador.value == '' || (regexSoloNumeros.test(inputnumero_entrenador.value)==false) ){
@@ -96,18 +72,11 @@ function validar(){
         inputnombre_entrenador.classList.remove('error-input');
     }
      //Validación edad
-     if(inputedad.value == '' || (regexSoloNumeros.test(inputnumero_entrenador.value)==false) ){
+     if(inputedad.value == '' || (regexSoloNumeros.test(inputedad.value)==false) ){
         inputedad.classList.add('error-input');
         bError = true;
     }else{
         inputedad.classList.remove('error-input');
-    }
-     //Validación sexo
-     if(inputsexo.value == ''){
-        inputsexo.classList.add('error-input');
-        bError = true;
-    }else{
-        inputsexo.classList.remove('error-input');
     }
 
     return bError;

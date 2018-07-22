@@ -5,47 +5,75 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    
   </head>
   
   <body>
-    <div id="gradient" />
-    <main>
-     
+      <header>
+          <div id ="gradient">
+              <h1>REGISTRO DE ENTRENADORES</h1>
+          </div> 
+      </header>
+      <div>
       <form class="formulario_entrenador">
-          <h1>REGISTRO DE ENTRENADORES</h1>
-        <div class = label-content>
-        <div class = input-content>
+
+        <div>
           <label for="txtnumero_entrenador">Numero de entrenador</label>
           <input type="text" id="txtnumero_entrenador">
         </div>
 
-        <div class = label-content>
-        <div class = input-content>
+        <div>
           <label for="txtnombre_entrenador">Nombre del entrenador</label>
           <input type="text" id="txtnombre_entrenador">
         </div>
 
-        <div class = label-content>
-            <div class = input-content>
+        <div>
           <label for="txtedad">Edad</label>
           <input type="text" id="txtedad">
         </div>
 
-        <div class = label-content>
-            <div class = input-content>
-            <label for="textsexo">Sexo</label>
-            <input type="text" id="textsexo">
+        <div>
+          <label for=" ">Sexo</label>
+          <select name="Sexo" id="txtsexo" required>
+            <option value=" ">Seleccione el sexo</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+          </select>
         </div>
 
-        <button type="button" id="btnSeleccionarImagen">Foto del Entrenador</button>
+        <div><button type="button" id="btnSeleccionarImagen">Foto del Entrenador</button></div>
+
+        <div><button type="button" id="btnregistro_entrenador" class="btn-registro">Registrar Entrenador</button></div>
+      </form>
+    </div>
+   
+      <div><h1>LISTA DE ENTRENADORES</h1></div>
+      <div>
+          <form action="">
+            <input type="text" name="input-Buscar" id="input-Buscar">
+            <label for="input-Buscar"><i class="fas fa-search"></i>Buscar Entrenador</label>
+          </form>
+        </div>
 
         <div>
-          <button type="button" id="btnregistro_entrenador" class="btn-registro">Registrar Entrenador</button>
-        </div>
-      </form>
-    </main>
+          <table id="tblentrenadores">
+              <thead>
+                  <th>Numero de Entrenador</th>
+                  <th>Nombre del Entrenador</th>
+                  <th>Edad</th>
+                  <th>Sexo</th>
+                  <th>Foto</th>
+              </thead>
+              <tbody>
+
+
+              </tbody>
+          </table>
+      </div>
+
+   
   </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -55,5 +83,12 @@
     <script src="../js/controlador_registro_entrenador.js"></script>
     <script src="../js/servicio_registro_entrenador.js"></script>
     <script src= "../js/servicio_imagen.js"></script>
-
+    <script src="../js/servicio_lista_entrenador.js"></script> 
+    <script src="../js/controlador_lista_entrenador.js"></script>
+    
+   
+    
+    
+    
+   
 </html>
