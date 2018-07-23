@@ -9,7 +9,7 @@ botonregistro.addEventListener('click' , obtenerDatos);
 let inputnumero_entrenador = document.querySelector('#txtnumero_entrenador');
 let inputnombre_entrenador = document.querySelector('#txtnombre_entrenador');
 let inputedad = document.querySelector('#txtedad');
-let inputsexo = document.querySelector('#textsexo');
+let inputsexo = document.querySelector('#txtsexo');
 
 
 function obtenerDatos(){
@@ -163,7 +163,7 @@ var colors = new Array(
   var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
   var color2 = "rgb("+r2+","+g2+","+b2+")";
   
-   $('#gradient').css({
+   $('#gradient3').css({
      background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
       background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
     

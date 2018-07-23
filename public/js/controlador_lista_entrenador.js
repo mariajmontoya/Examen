@@ -46,7 +46,7 @@ function listaEntrenador(criterioBusqueda){
             
             let imagen = document.createElement("img"); 
                imagen.src = "https://res-console.cloudinary.com/dspuap7va/thumbnails/v1/image/upload/v1532229609/ZGNxdWIwY3N4aHY5NW15bG9sY2k=/grid"; 
-               celdafoto.appendChild(imagen);
+               celdafoto_entrenador.appendChild(imagen);
         
         }
     }
@@ -95,7 +95,7 @@ var colors = new Array(
   var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
   var color2 = "rgb("+r2+","+g2+","+b2+")";
   
-   $('#gradient').css({
+   $('#gradient4').css({
      background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
       background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
     
