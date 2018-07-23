@@ -44,7 +44,7 @@ function obtenerDatos(){
             text: 'El entrenador se registró adecuadamente',
             confirmButtonText : 'Entendido'
         });
-    
+        listaEntrenador();
         limpiarFormulario();
     }
     

@@ -44,7 +44,7 @@ function obtenerDatos(){
             text: 'El pokemon se registró adecuadamente',
             confirmButtonText : 'Entendido'
         });
-    
+        listaPokemones();
         limpiarFormulario();
     }
     

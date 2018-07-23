@@ -40,10 +40,15 @@ function listaPokemones (criterioBusqueda){
             celdapokedex.innerHTML = listaPokemones[i]['pokedex'];
             celdapokemon.innerHTML = listaPokemones[i]['pokemon'];
             celdatipo.innerHTML = listaPokemones[i]['tipo'];
-            
-            let imagen = document.createElement("img"); 
-               imagen.src = "https://res-console.cloudinary.com/dspuap7va/thumbnails/v1/image/upload/v1532229609/ZGNxdWIwY3N4aHY5NW15bG9sY2k=/grid"; 
-               celdafoto.appendChild(imagen); 
+            let cadena =  listaPokemones[i]['foto'],
+                patron = "file",
+                nuevoValor    = "http",
+                nuevaCadena = cadena.replace(patron, nuevoValor);
+
+                let imagen = document.createElement("img"); 
+                imagen.src = nuevaCadena; 
+                imagen.classList.add('estiloImagen');
+                celdafoto.appendChild(imagen); 
 
         }
     }

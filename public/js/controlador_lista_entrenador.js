@@ -43,9 +43,14 @@ function listaEntrenador(criterioBusqueda){
             celdanombre_entrenador.innerHTML = listaEntrenador[i]['nombre_entrenador'];
             celdaedad.innerHTML = listaEntrenador[i]['edad'];
             celdasexo.innerHTML = listaEntrenador[i]['sexo'];
+            let cadena =  listaEntrenador[i]['foto_entrenador'],
+                patron = "file",
+                nuevoValor    = "http",
+                nuevaCadena = cadena.replace(patron, nuevoValor);
             
             let imagen = document.createElement("img"); 
-               imagen.src = "https://res-console.cloudinary.com/dspuap7va/thumbnails/v1/image/upload/v1532229609/ZGNxdWIwY3N4aHY5NW15bG9sY2k=/grid"; 
+               imagen.src = nuevaCadena; 
+               imagen.classList.add('estiloImagen');
                celdafoto_entrenador.appendChild(imagen);
         
         }
